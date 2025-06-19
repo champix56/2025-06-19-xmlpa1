@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY euro "&#x20ac;">
+<!-- DTD W3C XML Schéma généré par XMLSpy v2025 rel. 2 (x64) (http://www.altova.com) -->
+<!ELEMENT cp (#PCDATA)>
+<!ELEMENT ref (#PCDATA)>
+<!ELEMENT adr1 (#PCDATA)>
+<!ELEMENT adr2 EMPTY>
+<!ELEMENT ligne (ref, designation, surface?, phtByUnit, nbUnit, stotligne)>
+<!ATTLIST ligne
+	phtByUnit CDATA #IMPLIED
+>
+<!ELEMENT ville (#PCDATA)>
+<!ELEMENT client (destinataire, adr1, adr2, cp, ville)>
+<!ATTLIST client
+	numfactures CDATA #FIXED ""
+>
+<!ELEMENT lignes (ligne+)>
+<!ELEMENT nbUnit (#PCDATA)>
+<!ATTLIST nbUnit
+	typeUnit CDATA #REQUIRED
+>
+<!ELEMENT facture (client?, lignes)>
+<!ATTLIST facture
+	numfacture ID #REQUIRED
+	datefacture CDATA #REQUIRED
+	type CDATA #REQUIRED
+	idclient CDATA #REQUIRED
+	refdevis CDATA #IMPLIED
+>
+<!ELEMENT surface (#PCDATA)>
+<!ATTLIST surface
+	unite CDATA #REQUIRED
+>
+<!ELEMENT factures (facture+, clientRefs)>
+<!ATTLIST factures
+	rsets CDATA #REQUIRED
+	adr1ets CDATA #REQUIRED
+	adr2ets CDATA #FIXED ""
+	logourl CDATA #REQUIRED
+	cpets CDATA #REQUIRED
+	villeets CDATA #REQUIRED
+	dateeditionXML CDATA #REQUIRED
+	devise CDATA #REQUIRED
+>
+<!ELEMENT phtByUnit (#PCDATA)>
+<!ELEMENT stotligne (#PCDATA)>
+<!ELEMENT clientRefs EMPTY>
+<!ATTLIST clientRefs
+	idclient CDATA #REQUIRED
+	numfactures IDREFS #REQUIRED
+>
+<!ELEMENT designation (#PCDATA)>
+<!ELEMENT destinataire (#PCDATA)>

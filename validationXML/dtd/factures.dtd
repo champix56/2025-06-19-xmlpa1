@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY euro "&#x20ac;">
+<!ENTITY desorbaix "Alexandre">
+<!--<!ENTITY % inside SYSTEM "bla.dtd">
+%inside;-->
+
+<!-- DTD W3C XML Schéma généré par XMLSpy v2025 rel. 2 (x64) (http://www.altova.com) -->
+<!ELEMENT cp (#PCDATA)>
+<!ELEMENT ref (#PCDATA)>
+<!ELEMENT adr1 (#PCDATA)>
+<!ELEMENT adr2 EMPTY>
+<!ELEMENT ligne (ref, designation, surface?, phtByUnit, nbUnit, stotligne)>
+<!ATTLIST ligne phtByUnit (0.01|0.02|0.03) #IMPLIED>
+<!ELEMENT ville (#PCDATA)>
+<!ELEMENT client (destinataire, adr1, adr2, cp, ville)>
+<!ELEMENT lignes (ligne+)>
+<!ELEMENT nbUnit (#PCDATA)>
+<!ATTLIST nbUnit
+	typeUnit CDATA #REQUIRED
+>
+<!ELEMENT facture ((relation*, client)?, lignes)>
+<!ATTLIST facture
+	numfacture ID #REQUIRED
+	datefacture CDATA #REQUIRED
+	type (Devis|Facture) #REQUIRED
+	idclient CDATA #REQUIRED
+	refdevis IDREF #IMPLIED
+>
+<!ELEMENT surface (#PCDATA)>
+<!ATTLIST surface
+	unite CDATA #REQUIRED
+>
+<!ELEMENT factures (facture+)>
+<!ATTLIST factures
+	rsets CDATA #REQUIRED
+	adr1ets CDATA #REQUIRED
+	adr2ets CDATA #FIXED ""
+	logourl CDATA #REQUIRED
+	cpets CDATA #REQUIRED
+	villeets CDATA #REQUIRED
+	dateeditionXML CDATA #REQUIRED
+	devise CDATA #REQUIRED
+>
+<!ELEMENT relation (#PCDATA)>
+<!ELEMENT phtByUnit (#PCDATA)>
+<!ELEMENT stotligne (#PCDATA)>
+<!ELEMENT designation (#PCDATA)>
+<!ELEMENT destinataire (#PCDATA)>
