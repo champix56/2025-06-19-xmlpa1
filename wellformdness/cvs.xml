@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<cvs>
+	<cv idcv="V124">
+		<ident fr="V124">
+			<nom>DESORBAIX</nom>
+			<nom>manchelin</nom>
+			<prenom>Alexandre</prenom>
+			<datenaiss>1984-08-03</datenaiss>
+			<tel>06 64 27 63 60</tel>
+			<mail>desorbaix@free.fr</mail>
+			<permis>A</permis>
+			<vehicule>true</vehicule>
+			<langues>
+				<langue lu="true" ecrit="true" parle="true" langName="anglais"/>
+				<langue matern="true" langName="francais"/>
+			</langues>
+		</ident>
+		<phraseAccroche>Je souhaite mettre a votre disposition mes compétences en informatique et permettre de developper les capacités informatique de votre entreprise</phraseAccroche>
+		<formations>
+			<formation>
+				<anneeDeb>2007</anneeDeb>
+				<anneeFin>2011</anneeFin>
+				<lieu>ITIS Formation (91)</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>BTS Informatique de Gestion</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+					<diplome>
+						<intitule>DEES en alternance</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+		<experiences>
+			<experience>
+				<dateDeb>2009</dateDeb>
+				<dateFin>2011</dateFin>
+				<ets>Itis Formation</ets>
+				<etsCmpl> evry (91)</etsCmpl>
+				<intitule>Developpement d'un ERP</intitule>
+			</experience>
+			<experience>
+				<dateDeb>2009</dateDeb>
+				<dateFin>2011</dateFin>
+				<ets>Itis Formation</ets>
+				<etsCmpl> evry (91)</etsCmpl>
+				<intitule>Developpement d'un ERP</intitule>
+			</experience>
+			<experience>
+				<dateDeb>2011</dateDeb>
+				<dateFin>2012</dateFin>
+				<ets>Faculté dauphine</ets>
+				<etsCmpl>paris (75)</etsCmpl>
+				<intitule>Vacataire pour la licence management des organisations. matiere : TIC</intitule>
+			</experience>
+		</experiences>
+		<competences>
+			<competence type="réseau">
+				<contenu>Conception, installation et configuration ...</contenu>
+			</competence>
+			<competence type="langage">
+				<contenu>C</contenu>
+				<contenu>C++</contenu>
+				<contenu>XML</contenu>
+			</competence>
+		</competences>
+	</cv>
+	<cv idcv="V12">
+		<ident fr="V124">
+			<nom>DESORBAIX</nom>
+			<nom>manchelin</nom>
+			<prenom>Alexandre</prenom>
+			<datenaiss>1984-08-03</datenaiss>
+			<tel>06 64 27 63 60</tel>
+			<mail>desorbaix@free.fr</mail>
+			<permis>A</permis>
+			<vehicule>true</vehicule>
+			<langues>
+				<langue lu="true" ecrit="true" parle="true" langName="anglais"/>
+				<langue matern="true" langName="francais"/>
+			</langues>
+		</ident>
+		<phraseAccroche>Je souhaite mettre a votre disposition mes compétences en informatique et permettre de developper les capacités informatique de votre entreprise</phraseAccroche>
+		<formations>
+			<formation>
+				<anneeDeb>2007</anneeDeb>
+				<anneeFin>2011</anneeFin>
+				<lieu>ITIS Formation (91)</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>BTS Informatique de Gestion</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+					<diplome>
+						<intitule>DEES en alternance</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+		<experiences>
+			<experience>
+				<dateDeb>2009</dateDeb>
+				<dateFin>2011</dateFin>
+				<ets>Itis Formation</ets>
+				<etsCmpl> evry (91)</etsCmpl>
+				<intitule>Developpement d'un ERP</intitule>
+			</experience>
+			<experience>
+				<dateDeb>2009</dateDeb>
+				<dateFin>2011</dateFin>
+				<ets>Itis Formation</ets>
+				<etsCmpl> evry (91)</etsCmpl>
+				<intitule>Developpement d'un ERP</intitule>
+			</experience>
+			<experience>
+				<dateDeb>2011</dateDeb>
+				<dateFin>2012</dateFin>
+				<ets>Faculté dauphine</ets>
+				<etsCmpl>paris (75)</etsCmpl>
+				<intitule>Vacataire pour la licence management des organisations. matiere : TIC</intitule>
+			</experience>
+		</experiences>
+		<competences>
+			<competence type="réseau">
+				<contenu>Conception, installation et configuration ...</contenu>
+			</competence>
+			<competence type="langage">
+				<contenu>C</contenu>
+				<contenu>C++</contenu>
+				<contenu>XML</contenu>
+			</competence>
+		</competences>
+	</cv>
+</cvs>
