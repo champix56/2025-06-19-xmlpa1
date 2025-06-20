@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="factures">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="facture" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="client" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="destinataire" type="xs:string"/>
+										<xs:element name="adr1" type="xs:string"/>
+										<xs:element name="adr2">
+											<xs:complexType>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="cp" type="xs:int"/>
+										<xs:element name="ville" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="lignes">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ligne" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="ref" type="xs:string"/>
+													<xs:element name="designation" type="xs:string"/>
+													<xs:element name="surface" minOccurs="0">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:byte">
+																	<xs:attribute name="unite" use="required" type="xs:string"/>
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="phtByUnit" type="xs:decimal"/>
+													<xs:element name="nbUnit">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:decimal">
+																	<xs:attribute name="typeUnit" use="required" type="xs:string"/>
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="stotligne" type="xs:decimal"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="numfacture" use="required" type="xs:string"/>
+						<xs:attribute name="datefacture" use="required" type="xs:date"/>
+						<xs:attribute name="type" use="required" type="xs:string"/>
+						<xs:attribute name="idclient" use="required" type="xs:short"/>
+						<xs:attribute name="refdevis" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="clientRefs">
+					<xs:complexType>
+						<xs:attribute name="idclient" use="required" type="xs:short"/>
+						<xs:attribute name="numfactures" use="required" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="rsets" use="required" type="xs:string"/>
+			<xs:attribute name="adr1ets" use="required" type="xs:string"/>
+			<xs:attribute name="adr2ets" use="required" type="xs:string"/>
+			<xs:attribute name="logourl" use="required" type="xs:string"/>
+			<xs:attribute name="cpets" use="required" type="xs:int"/>
+			<xs:attribute name="villeets" use="required" type="xs:string"/>
+			<xs:attribute name="dateeditionXML" use="required" type="xs:date"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

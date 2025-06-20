@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="ST_CP">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="((0[1-9])|([1-9]\d))\d{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ST_VILLE">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\w+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:group name="G_ADRESSE">
+		<xs:sequence>
+			<xs:element name="adr1" type="xs:string"/>
+			<xs:element name="adr2" type="xs:string"/>
+			<xs:element name="cp" type="ST_CP"/>
+			<xs:element name="ville" type="ST_VILLE"/>
+		</xs:sequence>
+	</xs:group>
+</xs:schema>

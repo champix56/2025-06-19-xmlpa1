@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="adresse.xsd"/>
+	<xs:simpleType name="ST_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Facture"/>
+			<xs:enumeration value="Devis"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="factures">
+		<xs:annotation>
+			<xs:documentation>description de la balise root pour le fichier factures</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="facture" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="client" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="destinataire" type="xs:string"/>
+										<xs:group ref="G_ADRESSE"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="lignes">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ligne">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="ref" type="xs:string"/>
+													<xs:element name="designation" type="xs:string"/>
+													<xs:element name="phtByUnit">
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:fractionDigits value="2"/>
+																<xs:maxInclusive value="100"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="idclient" type="xs:int"/>
+						<xs:attribute name="numfacture" type="xs:ID"/>
+						<xs:attribute name="datefacture" type="xs:date"/>
+						<xs:attribute name="refdevis" type="xs:IDREF" use="optional"/>
+						<xs:attribute name="type" type="ST_Type"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="rsets" type="xs:string"/>
+			<xs:attribute name="adr1ets" type="xs:string"/>
+			<xs:attribute name="adr2ets" type="xs:string"/>
+			<xs:attribute name="cpets" type="ST_CP"/>
+			<xs:attribute name="villeets" type="ST_VILLE"/>
+			<xs:attribute name="logourl" type="xs:string"/>
+			<xs:attribute name="dateeditionXML" type="xs:date"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

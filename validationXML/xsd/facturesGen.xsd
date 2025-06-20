@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- W3C Schema W3C XML Schéma généré par XMLSpy v2025 rel. 2 (x64) (http://www.altova.com) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="adr1" type="xs:string"/>
+	<xs:element name="adr2" type="T_adr2"/>
+	<xs:element name="client" type="T_client"/>
+	<xs:element name="clientRefs" type="T_clientRefs"/>
+	<xs:element name="cp" type="xs:int"/>
+	<xs:element name="designation" type="xs:string"/>
+	<xs:element name="destinataire" type="xs:string"/>
+	<xs:element name="facture" type="T_facture"/>
+	<xs:element name="factures" type="T_factures"/>
+	<xs:element name="ligne" type="T_ligne"/>
+	<xs:element name="lignes" type="T_lignes"/>
+	<xs:element name="nbUnit" type="T_nbUnit"/>
+	<xs:element name="phtByUnit" type="xs:decimal"/>
+	<xs:element name="ref" type="xs:string"/>
+	<xs:element name="stotligne" type="xs:decimal"/>
+	<xs:element name="surface" type="T_surface"/>
+	<xs:element name="ville" type="xs:string"/>
+	<xs:attribute name="adr1ets" type="xs:string"/>
+	<xs:attribute name="adr2ets" type="AT_3"/>
+	<xs:attribute name="cpets" type="xs:int"/>
+	<xs:attribute name="dateeditionXML" type="xs:date"/>
+	<xs:attribute name="datefacture" type="xs:date"/>
+	<xs:attribute name="idclient" type="xs:short"/>
+	<xs:attribute name="logourl" type="xs:string"/>
+	<xs:attribute name="numfacture" type="xs:string"/>
+	<xs:attribute name="numfactures" type="xs:string"/>
+	<xs:attribute name="phtByUnit" type="xs:decimal"/>
+	<xs:attribute name="refdevis" type="xs:string"/>
+	<xs:attribute name="rsets" type="xs:string"/>
+	<xs:attribute name="type" type="xs:string"/>
+	<xs:attribute name="typeUnit" type="xs:string"/>
+	<xs:attribute name="unite" type="xs:string"/>
+	<xs:attribute name="villeets" type="xs:string"/>
+	<xs:complexType name="T_adr2">
+	</xs:complexType>
+	<xs:complexType name="T_client">
+		<xs:sequence>
+			<xs:element ref="destinataire"/>
+			<xs:element ref="adr1"/>
+			<xs:element ref="adr2"/>
+			<xs:element ref="cp"/>
+			<xs:element ref="ville"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T_clientRefs">
+		<xs:attribute ref="idclient" use="required"/>
+		<xs:attribute ref="numfactures" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="T_facture">
+		<xs:sequence>
+			<xs:element ref="client" minOccurs="0"/>
+			<xs:element ref="lignes"/>
+		</xs:sequence>
+		<xs:attribute ref="numfacture" use="required"/>
+		<xs:attribute ref="datefacture" use="required"/>
+		<xs:attribute ref="type" use="required"/>
+		<xs:attribute ref="idclient" use="required"/>
+		<xs:attribute ref="refdevis"/>
+	</xs:complexType>
+	<xs:complexType name="T_factures">
+		<xs:sequence>
+			<xs:element ref="facture" maxOccurs="unbounded"/>
+			<xs:element ref="clientRefs"/>
+		</xs:sequence>
+		<xs:attribute ref="rsets" use="required"/>
+		<xs:attribute ref="adr1ets" use="required"/>
+		<xs:attribute ref="adr2ets" use="required"/>
+		<xs:attribute ref="logourl" use="required"/>
+		<xs:attribute ref="cpets" use="required"/>
+		<xs:attribute ref="villeets" use="required"/>
+		<xs:attribute ref="dateeditionXML" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="T_ligne">
+		<xs:sequence>
+			<xs:element ref="ref"/>
+			<xs:element ref="designation"/>
+			<xs:element ref="surface" minOccurs="0"/>
+			<xs:element ref="phtByUnit"/>
+			<xs:element ref="nbUnit"/>
+			<xs:element ref="stotligne"/>
+		</xs:sequence>
+		<xs:attribute ref="phtByUnit"/>
+	</xs:complexType>
+	<xs:complexType name="T_lignes">
+		<xs:sequence>
+			<xs:element ref="ligne" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T_nbUnit">
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute ref="typeUnit" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="T_surface">
+		<xs:simpleContent>
+			<xs:extension base="xs:byte">
+				<xs:attribute ref="unite" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="AT_3">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value=""/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Edited with Altova MapForce 2025r2 -->
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap" uid="1" editable="1" blackbox="0">
+		<properties SelectedLanguage="xslt"/>
+		<structure>
+			<children>
+				<component name="count" library="core" uid="5" kind="5">
+					<sources>
+						<datapoint pos="0" key="22"/>
+						<datapoint pos="1" key="23"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="24"/>
+					</targets>
+					<view ltx="540" lty="384" rbx="665" rby="438"/>
+				</component>
+				<component name="sum" library="core" uid="7" kind="5">
+					<sources>
+						<datapoint pos="0" key="7"/>
+						<datapoint pos="1" key="8"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="9"/>
+					</targets>
+					<view ltx="512" lty="185" rbx="637" rby="239"/>
+				</component>
+				<component name="count" library="core" uid="9" kind="5">
+					<sources>
+						<datapoint pos="0" key="1"/>
+						<datapoint pos="1" key="2"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="512" lty="256" rbx="637" rby="310"/>
+				</component>
+				<component name="divide" library="core" uid="11" kind="5">
+					<sources>
+						<datapoint pos="0" key="4"/>
+						<datapoint pos="1" key="5"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="6"/>
+					</targets>
+					<view ltx="681" lty="215" rbx="763" rby="269"/>
+				</component>
+				<component name="Facture3" library="xml" uid="2" kind="14">
+					<properties/>
+					<view rbx="254" rby="400"/>
+					<data>
+						<root scrollposition="26">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="factures" outkey="25" expanded="1">
+										<entry name="facture" outkey="11" expanded="1">
+											<entry name="numfacture" type="attribute" outkey="26"/>
+											<entry name="idclient" type="attribute" outkey="27"/>
+											<entry name="lignes" expanded="1">
+												<entry name="ligne" outkey="28" expanded="1">
+													<entry name="phtByUnit" outkey="29"/>
+													<entry name="stotligne" outkey="10"/>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="..\Facture3.xsd" instanceroot="{}factures" inputinstance="..\Facture3.xml" outputinstance="..\Facture3.xml"/>
+					</data>
+				</component>
+				<component name="facturationtransfert" library="xml" uid="3" kind="14">
+					<properties XSLTDefaultOutput="1"/>
+					<view ltx="882" rbx="1165" rby="200"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="factures" inpkey="30" expanded="1">
+										<entry name="facture" inpkey="31" expanded="1">
+											<entry name="idfacture" type="attribute" inpkey="32"/>
+											<entry name="nomClient" type="attribute" inpkey="33"/>
+											<entry name="prixAvgArticle" inpkey="34"/>
+											<entry name="ligneAvg" inpkey="12" expanded="1"/>
+											<entry name="nbLignes" inpkey="35" expanded="1"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="facturationtransfert.dtd" instanceroot="{}factures" outputinstance="facturationtransfert.xml"/>
+					</data>
+				</component>
+				<component name="count" library="core" uid="12" kind="5">
+					<sources>
+						<datapoint pos="0" key="20"/>
+						<datapoint pos="1" key="15"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="17"/>
+					</targets>
+					<view ltx="480" lty="85" rbx="605" rby="139"/>
+				</component>
+				<component name="sum" library="core" uid="14" kind="5">
+					<sources>
+						<datapoint pos="0" key="19"/>
+						<datapoint pos="1" key="16"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="13"/>
+					</targets>
+					<view ltx="480" lty="14" rbx="605" rby="68"/>
+				</component>
+				<component name="divide" library="core" uid="13" kind="5">
+					<sources>
+						<datapoint pos="0" key="14"/>
+						<datapoint pos="1" key="18"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="21"/>
+					</targets>
+					<view ltx="649" lty="44" rbx="731" rby="98"/>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="11">
+						<edges>
+							<edge vertexkey="1"/>
+							<edge vertexkey="7"/>
+							<edge vertexkey="19"/>
+							<edge vertexkey="20"/>
+							<edge vertexkey="22"/>
+							<edge vertexkey="31"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="10">
+						<edges>
+							<edge vertexkey="2"/>
+							<edge vertexkey="8"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="4"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="3">
+						<edges>
+							<edge vertexkey="5"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="6">
+						<edges>
+							<edge vertexkey="12"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="13">
+						<edges>
+							<edge vertexkey="14"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="29">
+						<edges>
+							<edge vertexkey="15"/>
+							<edge vertexkey="16"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="17">
+						<edges>
+							<edge vertexkey="18"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="28">
+						<edges>
+							<edge vertexkey="23"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="25">
+						<edges>
+							<edge vertexkey="30"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="26">
+						<edges>
+							<edge vertexkey="32"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="27">
+						<edges>
+							<edge vertexkey="33"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="21">
+						<edges>
+							<edge vertexkey="34"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="24">
+						<edges>
+							<edge vertexkey="35"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>
